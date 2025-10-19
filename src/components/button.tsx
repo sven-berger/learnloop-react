@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface ButtonProps {
   buttonContent?: string;
   onClick?: () => void;
-  children?: ReactNode; // ✅ erlaubt beliebigen Inhalt zwischen <Button>...</Button>
+  children?: ReactNode;
 }
 
 const Button = ({ buttonContent, onClick, children }: ButtonProps) => {
