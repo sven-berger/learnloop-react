@@ -1,5 +1,5 @@
 import Section from "../components/section";
-import Button from "../components/button";
+import Button from "../components/buttonOnClick";
 import Content from "../components/content";
 import Card from "../components/card";
 import { useEffect, useState } from "react";
@@ -49,7 +49,7 @@ export default function Home() {
 
       <Content content={<Counter />} />
       <Content content={<NameForm />} />
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-6 lg:flex-row lg:gap-3">
         <Card
           title="Test1"
           image={Raven}

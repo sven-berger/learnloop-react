@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/button";
+import Button from "./buttonOnClick";
 import placeholderImage from "../assets/images/placeholder-image.jpg";
 
 interface CardProps {
