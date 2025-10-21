@@ -1,56 +1,39 @@
-import { useState } from "react";
-import Section from "./section";
 import ButtonForm from "./buttonForm";
-
 interface InputField {
   name: string;
+  value: string;
   label: string;
   type: string;
   placeholder?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface FormProps {
   fields: InputField[];
-  onSubmit: (data: Record<string, string>) => void;
+  onSubmit: (e: React.FormEvent) => void;
 }
 
-export default function Form({ fields, onSubmit }: FormProps) {
-  const [formData, setFormData] = useState<Record<string, string>>({});
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSubmit(formData);
-  };
-
+export default function FormSubmit({ fields, onSubmit }: FormProps) {
   return (
-    <section>
-      <Section sectionTitle="Zahlenvergleich">
-        <form onSubmit={handleSubmit} className="">
-          {fields.map((field) => (
-            <div key={field.name} className="mb-4">
-              <label className="block mb-1 font-medium">{field.label}</label>
-              <input
-                type={field.type}
-                name={field.name}
-                placeholder={field.placeholder}
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-gray-400"
-              />
-            </div>
-          ))}
-          <ButtonForm
-            buttonContentSubmit="Vergleichen"
-            buttonContentReset="Zurücksetzen"
+    <form onSubmit={onSubmit}>
+      {fields.map((field) => (
+        <div key={field.name} className="mb-4">
+          <label className="block mb-1 font-medium">{field.label}</label>
+          <input
+            type={field.type}
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            placeholder={field.placeholder}
+            className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-gray-400"
           />
-        </form>
-      </Section>
-    </section>
+        </div>
+      ))}
+
+      <ButtonForm
+        buttonContentSubmit="Vergleichen"
+        buttonContentReset="Zurücksetzen"
+      />
+    </form>
   );
 }
