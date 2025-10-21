@@ -4,8 +4,7 @@ interface ButtonFormProps {
 }
 
 const ButtonForm = ({
-  buttonContentSubmit,
-  buttonContentReset,
+  buttonContentSubmit
 }: ButtonFormProps) => {
   return (
     <div className="flex gap-3">
