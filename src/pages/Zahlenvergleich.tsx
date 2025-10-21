@@ -3,6 +3,29 @@ import Section from "../components/section";
 import Content from "../components/content";
 import { useState } from "react";
 
+
+// const profile ={
+//   id:"1",
+//   "firstName":"name",
+//     "lastName":"name",
+//     "age":12,
+// }
+
+// new profiles pages
+// state that will have and array of objects -> profile
+// create list of profiles 
+// you go to the profile page -> params also props
+// profile page -> dispalys information inputs 
+// edit the profile
+// delete the profile and you navigate back
+
+
+
+
+
+/// JSON + local storage 
+
+
 export default function Zahlenvergleich() {
   const [zahl1, setZahl1] = useState("");
   const [zahl2, setZahl2] = useState("");
@@ -21,7 +44,7 @@ export default function Zahlenvergleich() {
       return setErgebnis(`Zahl #2 (${num2}) ist größer als Zahl #1 (${num1}).`);
     setErgebnis(`Beide Zahlen sind gleich groß (${num1}).`);
   }
-
+  // replace(/[^0-9]+/g, '')
   return (
     <div className="space-y-4">
       <Section sectionTitle="Zahlenvergleich">
@@ -32,8 +55,9 @@ export default function Zahlenvergleich() {
               value: zahl1,
               label: "Zahl #1",
               onChange: (e) => setZahl1(e.target.value),
+
               placeholder: "Erste Zahl",
-              type: "number",
+              type: "text",
             },
             {
               name: "zahl2",
@@ -47,13 +71,7 @@ export default function Zahlenvergleich() {
           onSubmit={handleVergleich}
         />
       </Section>
-      {ergebnis && (
-        <Content
-          content={
-            <p>{ergebnis}</p>
-          }
-        />
-      )}
+      {ergebnis && <Content content={<p>{ergebnis}</p>} />}
     </div>
   );
 }
