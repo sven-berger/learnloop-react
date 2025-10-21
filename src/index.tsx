@@ -1,7 +1,7 @@
 import Home from "./pages/Home.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import TicTacToe from "./pages/TicTacToe.tsx";
-import ProfileProps from "./pages/profiles.tsx";
+import AcpProfiles from "./pages/acp/profiles.tsx";
 import Useeffect from "./pages/snippets/Useeffect.tsx";
 import Datenschutzerklaerung from "./pages/Datenschutzerklaerung.tsx";
 import Navbar from "./components/navbar.tsx";
@@ -21,7 +21,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/tictactoe" element={<TicTacToe />} />
-            <Route path="/profiles" element={<ProfileProps />} />
+            <Route path="/acp/profiles/" element={<AcpProfiles />} />
             <Route path="/zahlenvergleich" element={<Zahlenvergleich />} />
             <Route path="/snippets/useeffect" element={<Useeffect />} />
             <Route
