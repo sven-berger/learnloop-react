@@ -1,5 +1,6 @@
 import FormSubmit from "../components/formSubmit";
 import Section from "../components/section";
+import ButtonForm from "../components/buttonForm";
 import Content from "../components/content";
 import { useState } from "react";
 

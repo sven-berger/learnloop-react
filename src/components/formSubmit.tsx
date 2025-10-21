@@ -29,10 +29,8 @@ export default function FormSubmit({ fields, onSubmit }: FormProps) {
           />
         </div>
       ))}
-
       <ButtonForm
-        buttonContentSubmit="Vergleichen"
-        buttonContentReset="Zurücksetzen"
+        buttonContentSubmit="Absenden"
       />
     </form>
   );
