@@ -1,4 +1,4 @@
-import Profile from "./profile";
+import Profile from "./sidebarProfile";
 
 export default function Sidebar() {
   const birthday = new Date(1991, 8, 15);
